@@ -12,7 +12,6 @@ finish-args:
   - --share=ipc
   - --share=network
 
-
 modules:
   - name: openjdk
     buildsystem: simple
@@ -22,8 +21,8 @@ modules:
   - name: omegat-nojre
     sources:
       - type: archive
-        url: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.4.3/OmegaT_5.4.3_Beta_Without_JRE.zip
-        sha256: 1f5aadc7abc778761c361245e905661ed4ba36667835665fa7dc50885f92b6fe
+        url: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.4.4/OmegaT_5.4.4_Beta_Without_JRE.zip
+        sha256: c18779f2599885cb15888ac1bb4ed99657016360b80b36898603785f940d5259
         dest: omegatpkg
     buildsystem: simple
     build-commands:
