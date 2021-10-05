@@ -1,9 +1,9 @@
 app-id: org.omegat.OmegaT
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk11
+  - org.freedesktop.Sdk.Extension.openjdk17
 
 command: run.sh
 finish-args:
@@ -16,13 +16,13 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk11/install.sh
+      - /usr/lib/sdk/openjdk17/install.sh
 
   - name: omegat-nojre
     sources:
       - type: archive
-        url: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.5.0/OmegaT_5.5.0_Beta_Without_JRE.zip
-        sha256: 6362044bc890b6c1dda28b07426b9126e9135a4e5281421238cc6113ad69d57e
+        url: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.6.0/OmegaT_5.6.0_Beta_Without_JRE.zip
+        sha256: d4832cc030854297f3e929c28b7b5acf6701898c189eb932b84d2916e7da791d
         dest: omegatpkg
     buildsystem: simple
     build-commands:
