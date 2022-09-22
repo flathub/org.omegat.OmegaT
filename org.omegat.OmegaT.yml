@@ -1,9 +1,9 @@
 app-id: org.omegat.OmegaT
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk17
+  - org.freedesktop.Sdk.Extension.openjdk8
 
 command: run.sh
 finish-args:
@@ -16,7 +16,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk17/install.sh
+      - /usr/lib/sdk/openjdk8/install.sh
 
   - name: omegat-nojre
     sources:
