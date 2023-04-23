@@ -21,8 +21,8 @@ modules:
   - name: omegat-nojre
     sources:
       - type: archive
-        url: https://jaist.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.7.1/OmegaT_5.7.1_Beta_Without_JRE.zip
-        sha256: 35fd3df8c703275fb19eab4f86b9f8a69c66293a82993739f40b535408f6f993
+        url: https://nav.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.8.0/OmegaT_5.8.0_Beta_Without_JRE.zip
+        sha256: 1fe323c407ec7321c0b09c7235d61706a667c92a8ea98a16bed82a3c72fdbd55
         dest: omegatpkg
     buildsystem: simple
     build-commands:
