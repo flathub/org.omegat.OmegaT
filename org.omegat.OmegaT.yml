@@ -3,7 +3,7 @@ runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk8
+  - org.freedesktop.Sdk.Extension.openjdk
 
 command: run.sh
 finish-args:
@@ -16,13 +16,13 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk8/install.sh
+      - /usr/lib/sdk/openjdk/install.sh
 
   - name: omegat-nojre
     sources:
       - type: archive
-        url: https://nav.dl.sourceforge.net/project/omegat/OmegaT%20-%20Latest/OmegaT%205.8.0/OmegaT_5.8.0_Beta_Without_JRE.zip
-        sha256: 1fe323c407ec7321c0b09c7235d61706a667c92a8ea98a16bed82a3c72fdbd55
+        url: https://master.dl.sourceforge.net/project/omegat/OmegaT%20-%20Standard/OmegaT%206.0.0/OmegaT_6.0.0_Without_JRE.zip
+        sha256: 76c6d3e62b9906e7542f82b0e2b76f8b8cbdf2672f9d8363f6346f0b9c09a182
         dest: omegatpkg
     buildsystem: simple
     build-commands:
