@@ -3,7 +3,7 @@ runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk
+  - org.freedesktop.Sdk.Extension.openjdk21
 
 command: run.sh
 finish-args:
@@ -16,13 +16,13 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk/install.sh
+      - /usr/lib/sdk/openjdk21/install.sh
 
   - name: omegat-nojre
     sources:
       - type: archive
-        url: https://master.dl.sourceforge.net/project/omegat/OmegaT%20-%20Standard/OmegaT%206.0.0/OmegaT_6.0.0_Without_JRE.zip
-        sha256: 76c6d3e62b9906e7542f82b0e2b76f8b8cbdf2672f9d8363f6346f0b9c09a182
+        url: https://ixpeering.dl.sourceforge.net/project/omegat/OmegaT%20-%20Standard/OmegaT%206.0.1/OmegaT_6.0.1_Without_JRE.zip
+        sha256: 463e746f34fc93bf8659bd29fe66becf2f8fce417bb41ea25781785150089898
         dest: omegatpkg
     buildsystem: simple
     build-commands:
