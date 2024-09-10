@@ -32,6 +32,7 @@
 	<screenshots>
 		<screenshot type="default">
 			<image>https://omegat.org/img/screenshots/main_window_en.png</image>
+      <caption>OmegaT Main Window</caption>
 		</screenshot>
 	</screenshots>
 </component>
