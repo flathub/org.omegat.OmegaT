@@ -2,6 +2,7 @@
 
 <component type="desktop">
 	<id>org.omegat.OmegaT</id>
+  <launchable type="desktop-id">org.omegat.OmegaT.desktop</launchable>
 	<name>OmegaT</name>
 	<summary>A simple, open-source translation memory manager and CAT tool</summary>
 	<metadata_license>CC0-1.0</metadata_license>
@@ -15,7 +16,9 @@
 		<content_attribute id="social-info">mild</content_attribute>
 	</content_rating>
 
-	<developer_name>The OmegaT Project</developer_name>
+	<developer id="org.omegat">
+	  <name>The OmegaT Project</name>
+  </developer>
 	<releases>
 	  <release date="2024-09-10" version="6.0.1-0" />
 		<release date="2023-06-26" version="6.0.0" />
