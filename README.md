@@ -1,27 +1,23 @@
-# Flathub
+# OmegaT
 
-Flathub is the central place for building and hosting Flatpak builds.
+___A simple, open-source translation memory manager and CAT tool___
 
-Using the Flathub repository
-----------------------------
+OmegaT is a free translation memory application that works on Windows, macOS, Linux... It is a tool intended for professional translators. It does not translate for you! (Software that does this is called "machine translation", and you will have to look elsewhere for it.)
 
-To install applications that are hosted on Flathub, use the following:
-```
-flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.Recipes
-```
+---
 
-To install applications from the beta branch, use the following:
-```
-flatpak remote-add flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-flatpak install flathub-beta org.godotengine.Godot
+## Manual Install and Run
+
+Make sure you follow the [setup guide for your Linux distribution](https://flathub.org/en/setup) before installing.
+
+```bash
+flatpak install flathub org.omegat.OmegaT
+flatpak run org.omegat.OmegaT
 ```
 
-For more information and more applications see https://flathub.org
+## Building
 
-Contributing to Flathub
------------------------
-
-For information on creating packages or reporting issues please see the [contributing page](/CONTRIBUTING.md).
-
-***Note:*** *this repository is not for reporting issues related to the flathub.org website itself or contributing to its development. For that, go to https://github.com/flathub/linux-store-frontend*
+```bash
+git clone git@github.com:flathub/org.omegat.OmegaT.git
+flatpak run org.flatpak.Builder build-dir --user --ccache --force-clean --install org.omegat.OmegaT.yml
+```
