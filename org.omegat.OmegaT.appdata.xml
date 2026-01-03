@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <component type="desktop">
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0</project_license>
 	<id>org.omegat.OmegaT</id>
   <launchable type="desktop-id">org.omegat.OmegaT.desktop</launchable>
 	<name>OmegaT</name>
 	<summary>A simple, open-source translation memory manager and CAT tool</summary>
-	<metadata_license>CC0-1.0</metadata_license>
 	<description>
 		<p>OmegaT is a free translation memory application that works on Windows, macOS, Linux... It is a tool intended for professional translators. It does not translate for you! (Software that does this is called "machine translation", and you will have to look elsewhere for it.)</p>
 	</description>
 	<url type="homepage">https://omegat.org/</url>
-	<project_license>GPL-3.0</project_license>
+	<url type="vcs-browser">https://github.com/omegat-org/omegat</url>
 	
 	<content_rating type="oars-1.0">
 		<content_attribute id="social-info">mild</content_attribute>
