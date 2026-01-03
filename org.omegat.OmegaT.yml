@@ -7,7 +7,7 @@ sdk-extensions:
 
 command: run.sh
 finish-args:
-  - --filesystem=xdg-documents
+  - --filesystem=home
   - --socket=x11
   - --share=ipc
   - --share=network
