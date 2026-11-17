@@ -1,10 +1,9 @@
 app-id: org.omegat.OmegaT
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk
-
 command: run.sh
 finish-args:
   - --filesystem=xdg-documents
@@ -18,30 +17,27 @@ modules:
     build-commands:
       - /usr/lib/sdk/openjdk/install.sh
 
-  - name: omegat-nojre
-    sources:
-      - type: archive
-        url: https://ixpeering.dl.sourceforge.net/project/omegat/OmegaT%20-%20Standard/OmegaT%206.0.1/OmegaT_6.0.1_Without_JRE.zip
-        sha256: 463e746f34fc93bf8659bd29fe66becf2f8fce417bb41ea25781785150089898
-        dest: omegatpkg
+  - name: omegat
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/omegat
       - mv omegatpkg/* /app/share/omegat/
-
-  - name: launcher
-    buildsystem: simple
+      - install -Dm755 run.sh -t /app/bin/
+      - install -Dm644 /app/share/omegat/OmegaT-license.txt -t /app/share/licenses/${FLATPAK_ID}/
     sources:
-      - type: script
-        dest-filename: run.sh
-        commands:
-          - export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel ${_JAVA_OPTIONS}"
-          - export PATH=$PATH:/app/jre/bin/
-          - exec /app/share/omegat/OmegaT --config-dir="$XDG_CONFIG_HOME" ${OMEGAT_OPTIONS} $@
-    build-commands:
-          - install -Dm755 run.sh /app/bin/run.sh
+      - type: archive
+        url: https://sourceforge.net/projects/omegat/files/OmegaT%20-%20Standard/OmegaT%206.1.1/OmegaT_6.1.1_Without_JRE.zip
+        sha256: 6a99d1f86787b3ec92011b47d8bbd847d85f46ece70b4c6aad637c58eb6af6e9
+        dest: omegatpkg
+      - type: file
+        path: run.sh
 
-  - name: desktop
+  - name: metadata
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 ${FLATPAK_ID}.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications/
+      - install -Dm644 ${FLATPAK_ID}.appdata.xml -t /app/share/metainfo/
     sources:
       - type: file
         path: org.omegat.OmegaT.desktop
@@ -49,8 +45,4 @@ modules:
         path: org.omegat.OmegaT.svg
       - type: file
         path: org.omegat.OmegaT.appdata.xml
-    buildsystem: simple
-    build-commands:
-      - install -Dm644 org.omegat.OmegaT.svg /app/share/icons/hicolor/scalable/apps/org.omegat.OmegaT.svg
-      - install -Dm644 org.omegat.OmegaT.desktop /app/share/applications/org.omegat.OmegaT.desktop
-      - install -Dm644 org.omegat.OmegaT.appdata.xml /app/share/appdata/org.omegat.OmegaT.appdata.xml
+
